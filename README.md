@@ -30,8 +30,7 @@ Everything is driven by [`configs/demo.yaml`](configs/demo.yaml); there are no h
 The repository ships **no collaboration data**. The demo runs on a *synthetic benchmark* (48 parameters in 3 groups,
 2 samples × 2 variables × 20 bins) whose response $N(\theta)$ is known exactly. This is deliberate: with a known truth,
 the propagation can be **validated**, which is impossible on an opaque real fit. Numbers below describe the benchmark,
-not a real experiment. `io.read_gundam_fit` is an experimental reader for a real GUNDAM ROOT file (best-fit + covariance);
-a real analysis would also need a Jacobian or toys from the fitter.
+not a real experiment. A real analysis would need a Jacobian or toys from the fitter; the loader in `io/readers.py` can be adapted to other file formats.
 
 ## Method in one picture
 
@@ -113,7 +112,7 @@ configs/demo.yaml          scenarios, toy count, paths
 src/covsens/
   data.py                  typed containers (FitResult, Dataset, Propagated)
   synthetic.py, response.py  benchmark with known ground truth
-  io/readers.py            .npz loader, experimental GUNDAM ROOT reader
+  io/readers.py            .npz loader
   covariance/transforms.py decorrelate, interpolate, inflate, nearest-PSD repair
   covariance/validation.py symmetry / PSD / conditioning checks
   propagation/linear.py    finite-difference Jacobian, J Σ Jᵀ

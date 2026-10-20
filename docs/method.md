@@ -55,7 +55,7 @@ The sign of the effect depends on the sign of $J_i\cdot R\cdot J_j$, not on "cor
 
 * Synthetic response: conclusions about numbers (+50 % etc.) belong to the benchmark, not to a real experiment.
 * Gaussian parameters; linear propagation is first order (quantified in figure 05).
-* Real fits need a real Jacobian or toys from the fitter; `io.read_gundam_fit` only reads $\hat\theta$ and $\Sigma$ (experimental, untested here).
+* Real fits need a real Jacobian or toys from the fitter;
 
 ## 7. Surrogate extension (optional)
 
