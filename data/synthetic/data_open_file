@@ -1,0 +1,6 @@
+import numpy as np, json
+z = np.load("data/synthetic/synthetic_fit.npz")
+print(z.files)                      # les tableaux contenus
+print(z["theta_hat"][:10])           # best-fit des 10 premiers paramètres
+print(z["cov"].shape)               # (48, 48)
+print(json.loads(str(z["meta"])).keys())   # noms, groupes, définition des histogrammes
