@@ -1,8 +1,4 @@
-"""End-to-end orchestration: load -> validate -> propagate ref & scenarios -> metrics -> figures.
 
-This is the only module that knows the order of the steps; every step itself lives
-in its own module and can be used on its own.
-"""
 from __future__ import annotations
 
 import logging

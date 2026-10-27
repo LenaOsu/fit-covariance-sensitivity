@@ -1,8 +1,4 @@
-"""Core data containers shared by every module.
 
-Keeping them in one place means the other modules only exchange plain
-numpy arrays and these small, typed objects.
-"""
 from __future__ import annotations
 
 from collections.abc import Callable

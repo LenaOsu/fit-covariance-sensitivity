@@ -3,7 +3,7 @@ data: data/synthetic/synthetic_fit.npz
 output_dir: outputs
 toys: {n: 50000, seed: 1}
 sweep: {n_alpha: 21}
-headline_scenario: decorrelate_flux_xsec
+headline_scenario: half_correlations
 
 scenarios:
   - {name: decorrelate_all,        type: interpolate,        alpha: 0.0}
@@ -14,3 +14,12 @@ scenarios:
   - {name: inflate_flux_x2,        type: inflate,            group: flux, factor: 2.0}
   - {name: inflate_xsec_x2,        type: inflate,            group: xsec, factor: 2.0}
   - {name: inflate_det_x2,         type: inflate,            group: det,  factor: 2.0}
+
+
+# Optional ML extension (covsens surrogate): needs `pip install -e ".[ml]"`
+surrogate:
+  train_sizes: [100, 300, 1000, 3000]
+  n_test: 20000
+  seed: 11
+  plot_n: 1000
+  scenarios: [reference, half_correlations, inflate_xsec_x2]

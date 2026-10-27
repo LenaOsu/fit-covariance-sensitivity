@@ -1,12 +1,4 @@
-"""A controlled, known response model used to build the synthetic benchmark.
 
-    N_i(theta) = N0_i * exp( sum_j a_ij theta_j + 0.5 * sum_j b_ij theta_j^2 )
-
-The quadratic term makes it mildly non-linear, so toys and linear propagation
-are *expected* to differ slightly, which is what the validation plot shows.
-Because the truth is known, the analytic Jacobian is available to test the
-numerical one.
-"""
 from __future__ import annotations
 
 from dataclasses import dataclass

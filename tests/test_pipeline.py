@@ -10,7 +10,7 @@ def test_end_to_end_runs_and_control_scenario_is_neutral(tmp_path):
     save_dataset(tmp_path / "d.npz", ds, resp)
     cfg = {
         "data": str(tmp_path / "d.npz"), "output_dir": str(tmp_path / "out"),
-        "toys": {"n": 2000, "seed": 1}, "sweep": {"n_alpha": 3},
+        "toys": {"n": 3000, "seed": 1}, "sweep": {"n_alpha": 3},
         "headline_scenario": "decorr",
         "scenarios": [
             {"name": "decorr", "type": "decorrelate_groups", "groups": ["flux", "xsec"]},
