@@ -1,0 +1,16 @@
+# Everything the demo needs, no hard-coded paths in the code.
+data: data/synthetic/synthetic_fit.npz
+output_dir: outputs
+toys: {n: 50000, seed: 1}
+sweep: {n_alpha: 21}
+headline_scenario: decorrelate_flux_xsec
+
+scenarios:
+  - {name: decorrelate_all,        type: interpolate,        alpha: 0.0}
+  - {name: half_correlations,      type: interpolate,        alpha: 0.5}
+  - {name: decorrelate_flux_xsec,  type: decorrelate_groups, groups: [flux, xsec]}
+  # negative control: the reference has no flux-det correlation, so the ratio must be exactly 1
+  - {name: control_flux_det,       type: decorrelate_groups, groups: [flux, det]}
+  - {name: inflate_flux_x2,        type: inflate,            group: flux, factor: 2.0}
+  - {name: inflate_xsec_x2,        type: inflate,            group: xsec, factor: 2.0}
+  - {name: inflate_det_x2,         type: inflate,            group: det,  factor: 2.0}
