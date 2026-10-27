@@ -3,7 +3,7 @@ data: data/synthetic/synthetic_fit.npz
 output_dir: outputs
 toys: {n: 50000, seed: 1}
 sweep: {n_alpha: 21}
-headline_scenario: decorrelate_flux_xsec
+headline_scenario: inflate_flux_x2
 
 scenarios:
   - {name: decorrelate_all,        type: interpolate,        alpha: 0.0}
@@ -21,4 +21,4 @@ surrogate:
   n_test: 20000
   seed: 11
   plot_n: 1000
-  scenarios: [reference, decorrelate_flux_xsec, inflate_xsec_x2]
+  scenarios: [reference, inflate_flux_x2, inflate_xsec_x2]
